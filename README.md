@@ -54,7 +54,7 @@ To see the animation with default parameters: [https://youtu.be/9tKttP7lyuA](htt
 
 ## 🛠️ Technologies Used
 
-- Python 3.x
+- Python 3.12.11
 - PyTorch 
 - SimPy 
 - NumPy
