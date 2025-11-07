@@ -60,3 +60,6 @@ To see the default animation: [https://youtu.be/9tKttP7lyuA](https://youtu.be/9t
 - NumPy
 - Matplotlib 
 - SciPy
+
+## 📄 License
+This project is licensed under the [MIT License](./LICENSE). See the LICENSE file for more details.
