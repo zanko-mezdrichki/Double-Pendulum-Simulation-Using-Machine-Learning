@@ -44,7 +44,7 @@ For more details and results, see double_pendulum.pdf(highly recommended).
 
 In the preview folder there are images showing the training history and the comparison between angles calculated with the two methods with default parameters.
 
-To see the default animation: [https://youtu.be/9tKttP7lyuA](https://youtu.be/9tKttP7lyuA)
+To see the animation with default parameters: [https://youtu.be/9tKttP7lyuA](https://youtu.be/9tKttP7lyuA)
 
 ## 📈 Future Improvements
 
