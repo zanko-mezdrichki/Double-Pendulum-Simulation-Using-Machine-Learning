@@ -47,13 +47,13 @@ In the preview folder there are images showing the training history and the comp
 
 To see the animation with default parameters: [https://youtu.be/9tKttP7lyuA](https://youtu.be/9tKttP7lyuA)
 
-## 📈 Future Improvements
+# Future Improvements
 
 - PyQt5 interface for configuration.
 - Implementation of adaptive loss weighting(e.g. **GradNorm**) for better training balance.
 - Testing other architectures such as **SIREN** or **Fourier-feature networks**.
 
-## 🛠️ Technologies Used
+# Technologies Used
 
 - Python 3.12.11
 - PyTorch 
@@ -62,5 +62,5 @@ To see the animation with default parameters: [https://youtu.be/9tKttP7lyuA](htt
 - Matplotlib 
 - SciPy
 
-## 📄 License
+# License
 This project is licensed under the [MIT License](./LICENSE). See the LICENSE file for more details.
