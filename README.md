@@ -39,7 +39,7 @@ The result is compared with solutions calculated using the **odeint** function f
 - **Physical Properties:** $m_1$, $m_2$, $L_1$, $L_2$, $g$
 - **Model Hyperparameters:** Duration of the simulation, number of time points considered, learning rate, epochs.
 
-# Preview
+# Results
 
 For more details and results, see **double_pendulum.pdf** (highly recommended).
 
