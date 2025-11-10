@@ -6,15 +6,15 @@ The result is compared with solutions calculated using the **odeint** function f
 
 # Features
 
-* **Physics-based Data Generation:** SciPy's odeint function generates trajectories for various initial conditions.
+* **Real Physics:** The SciPy odeint function generates the trajectory based on the initial conditions.
 * **PINN Model:** PINN incorporates the Euler-Lagrange equations directly into the loss function.
-* **Chaotic Motion Prediction:** The trained model aims to accurately predict the highly non-linear and chaotic trajectories.
-* **Visual Analytic Tools:** Plots and animations to compare model predictions against the ground-truth trajectories.
+* **Chaotic Motion Prediction:** The trained model is capable of predicting the chaotic trajectory.
+* **Visualisation:** Plots and animations to compare model prediction against the real trajectory.
 * **Configurable Parameters:** Allows experimentation with initial conditions and PINN properties.
 
 # Installation & Usage
 
-*(Note: A GPU is highly recommended for faster training)*
+ *A GPU is highly recommended for faster training
 
 1.  **Clone the repository:**
     ```bash
