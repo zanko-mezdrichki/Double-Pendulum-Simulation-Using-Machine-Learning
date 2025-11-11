@@ -2,7 +2,7 @@ import numpy as np
 
 def obtain_config():
     parameters = {}
-    print("Insert all the values")
+    print("Insert all the values, if the input is not valid, the default parameters will be used")
     try:
         parameters['L1'] = float(input("Length of the first pendulum:"))
         parameters['L2'] = float(input("Length of the second pendulum:"))

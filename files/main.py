@@ -14,7 +14,7 @@ torch.manual_seed(seed)
 
 # Configuration and true data
 config = obtain_config()
-times, true_solution = true_simulation(config)
+time_list, true_solution = true_simulation(config)
 
 theta1_true = true_solution[:, 0] #first column 
 theta2_true = true_solution[:, 2]
@@ -46,8 +46,8 @@ t_physics.requires_grad_(True)
 
 # Data points for improve learning
 n_data_points = int(n_points/20)
-data_indices = np.linspace(0, len(times)-1, n_data_points, dtype=int)
-t_data = torch.tensor(times[data_indices], dtype=torch.float32).view(-1, 1)
+data_indices = np.linspace(0, len(time_list)-1, n_data_points, dtype=int)
+t_data = torch.tensor(time_list[data_indices], dtype=torch.float32).view(-1, 1)
 values_data = torch.tensor(true_solution[data_indices], dtype=torch.float32)
 
 #setting the model
@@ -165,7 +165,7 @@ plt.savefig("training_history.png", dpi=300)
 
 # Evaluation
 model.eval()
-t_eval = torch.tensor(times, dtype=torch.float32).view(-1, 1)
+t_eval = torch.tensor(time_list, dtype=torch.float32).view(-1, 1)
 with torch.no_grad():
     y_pred = model(t_eval).numpy()
 
@@ -182,8 +182,8 @@ theta2_max_error = np.max(np.abs(theta2_true - theta2_pred))
 plt.figure(figsize=(12, 8))
 
 plt.subplot(2, 1, 1)
-plt.plot(times, theta1_true, 'k-', label='SciPy Prediction', linewidth=2)
-plt.plot(times, theta1_pred, 'r--', label='PINN Prediction', linewidth=2, alpha=0.8)
+plt.plot(time_list, theta1_true, 'k-', label='SciPy Prediction', linewidth=2)
+plt.plot(time_list, theta1_pred, 'r--', label='PINN Prediction', linewidth=2, alpha=0.8)
 plt.xlabel('Time (s)')
 plt.ylabel(r'$\theta_1$ (rad)')
 plt.title(f'PINN vs. SciPy Comparison - θ1 (MAE: {theta1_error:.4f})')
@@ -191,8 +191,8 @@ plt.legend()
 plt.grid(True, alpha=0.3)
 
 plt.subplot(2, 1, 2)
-plt.plot(times, theta2_true, 'k-', label='SciPy Prediction', linewidth=2)
-plt.plot(times, theta2_pred, 'b--', label='PINN Prediction', linewidth=2, alpha=0.8)
+plt.plot(time_list, theta2_true, 'k-', label='SciPy Prediction', linewidth=2)
+plt.plot(time_list, theta2_pred, 'b--', label='PINN Prediction', linewidth=2, alpha=0.8)
 plt.xlabel('Time (s)')
 plt.ylabel(r'$\theta_2$ (rad)')
 plt.title(f'PINN vs. SciPy Comparison - θ2 (MAE: {theta2_error:.4f})')
@@ -265,7 +265,7 @@ def update(i):
     
     pinn_trace.set_data(x2_pred[:i], y2_pred[:i])
 
-    time_text.set_text(f'Time: {times[i]:.1f}s')
+    time_text.set_text(f'Time: {time_list[i]:.1f}s')
     
     return scipy_line_1, scipy_line_2, scipy_trace, pinn_line_1, pinn_line_2, pinn_trace, time_text
 
